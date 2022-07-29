@@ -657,6 +657,9 @@ export function drawProteinInteractionGraph(
   const height = GRAPH_HEIGHT_M - MARGIN.top - MARGIN.bottom;
   const width = GRAPH_WIDTH_M - MARGIN.left - MARGIN.right;
 
+  // remove old graph if exists (> * selects child of div)
+  d3.select(`#${chartId} > *`).remove();
+
   const svg = d3
     .select(`#${chartId}`)
     .append("svg")
